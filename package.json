@@ -4,7 +4,8 @@
   "description": "A GitHub Actions workflow for semantic-release.",
   "main": "index.js",
   "scripts": {
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -26,9 +27,19 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "release": {
+    "publish": [
+      {
+        "path": "@semantic-release/npm",
+        "npmPublish": false
+      },
+      "@semantic-release/github"
+    ]
+  },
   "homepage": "https://github.com/AGHAP/semantic-release-workflow#readme",
   "devDependencies": {
     "commitizen": "^4.1.2",
-    "cz-conventional-changelog": "^3.2.0"
+    "cz-conventional-changelog": "^3.2.0",
+    "semantic-release": "^17.1.1"
   }
 }
